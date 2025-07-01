@@ -40,7 +40,7 @@ module 0x0::pub_a{
 
 module 0x0::pub_b{
     public fun y(){
-        
+
     }
 }
 
@@ -49,3 +49,23 @@ module 0x0::access_mod{
         0x0::pub_a::x();
     }
 }
+
+module 0x0::leaking_resource {
+    public struct DB has store, drop {
+        category: vector<u8>
+    }
+
+    fun action_point() {
+        let x: DB = DB{
+            category: b""
+        };
+
+    }
+}
+
+module 0x0::optionning{
+    fun i () {
+        let x: Optionn = option ::some(e: e)
+    }
+}
+
